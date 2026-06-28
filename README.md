@@ -1,4 +1,4 @@
-# central-sismo-venezuela
+# sismo-ve
 
 > 📍 Una iniciativa de la comunidad de desarrolladores independientes de Venezuela.
 
