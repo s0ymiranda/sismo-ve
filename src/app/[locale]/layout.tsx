@@ -42,7 +42,12 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     robots: {
       index: true,
       follow: true,
-    }
+    },
+    icons: {
+      icon: '../icon.png',
+      shortcut: '../icon.png',
+      apple: '../icon.png',
+    },
   };
 }
 
