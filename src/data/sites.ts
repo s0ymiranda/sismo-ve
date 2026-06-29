@@ -12,6 +12,15 @@ export interface WebSiteItem {
 
 export const DIRECTORY_DATA: WebSiteItem[] = [
   {
+    id: '0',
+    title: 'Registro Desaparecidos',
+    descriptionEs: 'Documento colaborativo (Google Sheets) actualizado en tiempo real para ubicar familiares. Incluye cédula, estatus, locación, contacto, etc.',
+    descriptionEn: 'Real-time collaborative spreadsheet with over 2400 records to help locate missing relatives. Includes ID, status, and contact information.',
+    url: 'https://docs.google.com/spreadsheets/d/1Q8HpeHIg5eRaapn5zj10M_0KINIxc8U9XaS7b5ESn3A/edit?gid=1553196425#gid=1553196425',
+    categories: ['MISSING','HOSPITALS',],
+    verified: true
+  },
+  {
     id: '1',
     title: 'Venezuela Reporta',
     descriptionEs: 'Plataforma comunitaria para reportar personas desaparecidas y actualizar su estado o ubicación exacta tras el sismo.',
