@@ -20,17 +20,21 @@
   },
   "Categories": {
     "ALL": "VER TODO",
-    "EMERGENCY": "EMERGENCIA",
-    "DONATIONS": "DONACIONES",
+    "MISSING": "DESAPARECIDOS",
+    "CHILDREN": "NIÑOS",
+    "HOSPITALS": "HOSPITALES",
+    "DONATIONS": "AYUDAS/DONACIONES",
     "MAPS": "MAPAS DE RIESGO",
-    "NEWS": "NOTICIAS",
+    "PETS": "MASCOTAS",
     "VOLUNTEERING": "VOLUNTARIADO",
+    "REPORTS": "DENUNCIAS",
     "ABOUT": "APORTAR"
   },
   "Directory": {
     "verified": "VERIFICADO",
     "visit": "IR AL SITIO",
-    "empty": "No hay registros disponibles en esta sección por el momento."
+    "empty": "No hay registros disponibles en esta sección por el momento.",
+    "searchPlaceholder": "Buscar sitios, recursos o palabras clave..."
   },
   "About": {
     "title": "ÚNETE AL ESFUERZO",
