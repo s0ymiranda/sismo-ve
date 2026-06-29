@@ -25,7 +25,7 @@
     "MAPS": "RISK MAPS",
     "NEWS": "NEWS",
     "VOLUNTEERING": "VOLUNTEERING",
-    "ABOUT": "COMMUNITY / CONTRIBUTE"
+    "ABOUT": "CONTRIBUTE"
   },
   "Directory": {
     "verified": "VERIFIED",
@@ -33,7 +33,7 @@
     "empty": "No records available in this section at the moment."
   },
   "About": {
-    "title": "JOIN THE EFFORT / COLLABORATION",
+    "title": "JOIN THE EFFORT",
     "description": "This portal is an open-source effort to centralize aid tools. If you are a developer, designer, or know of initiatives that should be indexed, join our community to help organize the contingency response.",
     "createdBy": "Open-source initiative maintained by:",
     "discordButton": "JOIN DISCORD",
