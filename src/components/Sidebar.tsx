@@ -41,7 +41,7 @@ export default function Sidebar({
       <aside className={`
         fixed inset-y-0 left-0 z-50 w-72 flex flex-col overflow-hidden transition-transform duration-300 ease-in-out
         bg-white/60 backdrop-blur-xl shadow-[4px_0_24px_rgba(0,0,0,0.1)] p-4 md:p-6
-        md:relative md:z-10 md:transform-none md:w-64 md:h-fit md:bg-white/40 md:shadow-lg md:rounded-lg
+        md:relative md:z-10 md:transform-none md:w-80 md:h-fit md:bg-white/40 md:shadow-lg md:rounded-lg
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
       `}>
         <div className="shrink-0 font-pixel text-[11px] text-vzla-blue tracking-wider mb-4 md:mb-6 border-b-2 border-vzla-dark/20 pb-2 uppercase flex justify-between items-center">
