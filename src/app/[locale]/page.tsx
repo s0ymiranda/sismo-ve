@@ -7,15 +7,61 @@ import DirectoryCard from '../../components/DirectoryCard';
 import { DIRECTORY_DATA } from '../../data/sites';
 import { CategoryId } from '../../data/categories';
 
+const normalizeText = (text: string) => {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+};
+
+const isFlexibleMatch = (term: string, fullText: string) => {
+  if (fullText.includes(term)) return true;
+  
+  const words = fullText.split(/\s+/);
+  
+  for (const word of words) {
+    const minLen = Math.min(term.length, word.length);
+    if (minLen < 4) continue; 
+    
+    let matchCount = 0;
+    for (let i = 0; i < minLen; i++) {
+      if (term[i] === word[i]) matchCount++;
+      else break; 
+    }
+    
+    if (matchCount >= 4 && (matchCount / term.length) >= 0.7) {
+      return true;
+    }
+  }
+  return false;
+};
+
 export default function HomePage() {
   const t = useTranslations();
   const currentLocale = useLocale();
   
   const [activeCategory, setActiveCategory] = useState<CategoryId>('ALL');
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleCategoryChange = (category: CategoryId) => {
+    setActiveCategory(category);
+    setSearchQuery(''); 
+  };
 
   const filteredSites = DIRECTORY_DATA.filter((site) => {
-    return activeCategory === 'ALL' || site.category === activeCategory;
+    const matchesCategory = activeCategory === 'ALL' || site.categories.includes(activeCategory);
+    if (!matchesCategory) return false;
+
+    if (searchQuery.trim() === '') return true;
+
+    const combinedSiteText = normalizeText(`${site.title} ${site.descriptionEs} ${site.descriptionEn}`);
+    
+    const searchTerms = normalizeText(searchQuery).split(' ').filter(term => term.length > 0);
+
+    const matchesSearch = searchTerms.every(term => isFlexibleMatch(term, combinedSiteText));
+
+    return matchesSearch;
   });
 
   return (
@@ -65,7 +111,7 @@ export default function HomePage() {
         
         <Sidebar 
           activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
+          setActiveCategory={handleCategoryChange}
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
@@ -112,7 +158,23 @@ export default function HomePage() {
 
           ) : (
             
-            <div className="w-full">
+            <div className="w-full flex flex-col">
+              
+              {activeCategory === 'ALL' && (
+                <div className="mb-6">
+                  <div className="relative flex items-center">
+                    <span className="absolute left-4 text-lg">🔍</span>
+                    <input 
+                      type="text" 
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder={t('Directory.searchPlaceholder')}
+                      className="w-full bg-white border-4 border-vzla-dark pl-12 pr-4 py-3 md:py-4 font-pixel text-[10px] md:text-xs text-vzla-dark shadow-[4px_4px_0px_0px_#121212] focus:outline-none focus:translate-x-[4px] focus:translate-y-[4px] focus:shadow-none transition-all placeholder:text-neutral-400"
+                    />
+                  </div>
+                </div>
+              )}
+
               {filteredSites.length > 0 ? (
                 <section className="grid grid-cols-1 xl:grid-cols-2 gap-5 w-full">
                   {filteredSites.map((site) => (
@@ -120,9 +182,9 @@ export default function HomePage() {
                   ))}
                 </section>
               ) : (
-                <div className="w-full max-w-md arcade-window bg-white border-4 border-vzla-dark p-10 md:p-12 text-center flex flex-col items-center justify-center shadow-retro-lg">
+                <div className="w-full max-w-md mx-auto arcade-window bg-white border-4 border-vzla-dark p-10 md:p-12 text-center flex flex-col items-center justify-center shadow-retro-lg">
                   <span className="text-4xl mb-4 animate-bounce">⚠️</span>
-                  <p className="font-pixel text-[10px] md:text-xs text-vzla-dark leading-relaxed">
+                  <p className="font-pixel text-[10px] md:text-xs text-vzla-dark leading-relaxed uppercase">
                     {t('Directory.empty')}
                   </p>
                 </div>

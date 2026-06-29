@@ -20,17 +20,21 @@
   },
   "Categories": {
     "ALL": "VIEW ALL",
-    "EMERGENCY": "EMERGENCY",
-    "DONATIONS": "DONATIONS",
+    "MISSING": "MISSING PERSONS",
+    "CHILDREN": "CHILDREN",
+    "HOSPITALS": "HOSPITALS",
+    "DONATIONS": "AID/DONATIONS",
     "MAPS": "RISK MAPS",
-    "NEWS": "NEWS",
+    "PETS": "PETS",
     "VOLUNTEERING": "VOLUNTEERING",
+    "REPORTS": "REPORTS",
     "ABOUT": "CONTRIBUTE"
   },
   "Directory": {
     "verified": "VERIFIED",
     "visit": "VISIT SITE",
-    "empty": "No records available in this section at the moment."
+    "empty": "No records available in this section at the moment.",
+    "searchPlaceholder": "Search sites, resources or keywords..."
   },
   "About": {
     "title": "JOIN THE EFFORT",

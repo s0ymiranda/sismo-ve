@@ -1,6 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import { WebSiteItem } from '../data/sites';
+import { SIDEBAR_ITEMS } from '../data/categories';
 
 interface DirectoryCardProps {
   site: WebSiteItem;
@@ -16,18 +17,33 @@ export default function DirectoryCard({ site, currentLocale }: DirectoryCardProp
   return (
     <article className="arcade-window flex flex-col justify-between h-full bg-white border-4 border-vzla-dark overflow-hidden">
       <div className="flex flex-col h-full">
-        <div className="flex justify-between items-center mb-4 pb-2 border-b-2 border-neutral-100">
-          <span className="px-2 py-1 bg-vzla-dark text-white font-pixel text-[8px] tracking-widest uppercase">
-            {tCat(site.category)}
-          </span>
+        
+        <div className="flex justify-between items-start mb-4 pb-3 border-b-2 border-neutral-100 gap-2">
+          <div className="flex flex-wrap gap-2">
+            {site.categories.map((cat) => {
+              const iconObj = SIDEBAR_ITEMS.find(item => item.id === cat);
+              const icon = iconObj ? iconObj.icon : '📌';
+
+              return (
+                <span 
+                  key={cat}
+                  title={tCat(cat)} 
+                  className="flex items-center justify-center w-8 h-8 bg-white border-2 border-vzla-dark shadow-[2px_2px_0px_0px_#121212] text-sm cursor-help hover:scale-110 transition-transform"
+                >
+                  {icon}
+                </span>
+              );
+            })}
+          </div>
+          
           {site.verified && (
-            <span className="font-pixel text-[8px] text-green-600 font-bold flex items-center gap-1">
+            <span className="shrink-0 font-pixel text-[8px] text-green-600 font-bold flex items-center gap-1 mt-1">
               ✓ {t('verified')}
             </span>
           )}
         </div>
         
-        <h3 className="font-pixel text-[13px] text-vzla-dark mb-3 leading-tight tracking-normal uppercase font-bold break-words">
+        <h3 className="font-sans text-[15px] text-vzla-dark leading-tight tracking-normal uppercase font-bold break-words mb-3">
           {site.title}
         </h3>
         
@@ -40,7 +56,7 @@ export default function DirectoryCard({ site, currentLocale }: DirectoryCardProp
         href={site.url} 
         target="_blank" 
         rel="noopener noreferrer" 
-        className="arcade-btn bg-vzla-red text-white hover:bg-red-600 w-full mt-auto block"
+        className="arcade-btn bg-vzla-red text-white hover:bg-red-600 w-full mt-auto block text-center"
       >
         {t('visit')}
       </a>

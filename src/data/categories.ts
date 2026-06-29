@@ -1,4 +1,14 @@
-export type CategoryId = 'ALL' | 'EMERGENCY' | 'DONATIONS' | 'MAPS' | 'NEWS' | 'VOLUNTEERING' | 'ABOUT';
+export type CategoryId = 
+  | 'ALL' 
+  | 'MISSING' 
+  | 'CHILDREN' 
+  | 'HOSPITALS'
+  | 'DONATIONS' 
+  | 'MAPS' 
+  | 'PETS' 
+  | 'VOLUNTEERING' 
+  | 'REPORTS' 
+  | 'ABOUT';
 
 export interface SidebarItem {
   id: CategoryId;
@@ -8,10 +18,13 @@ export interface SidebarItem {
 
 export const SIDEBAR_ITEMS: SidebarItem[] = [
   { id: 'ALL', translationKey: 'ALL', icon: '🌐' },
-  { id: 'EMERGENCY', translationKey: 'EMERGENCY', icon: '🚨' },
+  { id: 'MISSING', translationKey: 'MISSING', icon: '🔍' },
+  { id: 'CHILDREN', translationKey: 'CHILDREN', icon: '🧸' },
+  { id: 'PETS', translationKey: 'PETS', icon: '🐾' },
+  { id: 'HOSPITALS', translationKey: 'HOSPITALS', icon: '🏥' },
   { id: 'DONATIONS', translationKey: 'DONATIONS', icon: '❤️' },
-  { id: 'MAPS', translationKey: 'MAPS', icon: '🗺️' },
-  { id: 'NEWS', translationKey: 'NEWS', icon: '📰' },
   { id: 'VOLUNTEERING', translationKey: 'VOLUNTEERING', icon: '🤝' },
+  { id: 'REPORTS', translationKey: 'REPORTS', icon: '⚠️' },
+  { id: 'MAPS', translationKey: 'MAPS', icon: '🗺️' },
   { id: 'ABOUT', translationKey: 'ABOUT', icon: 'ℹ️' }
 ];
