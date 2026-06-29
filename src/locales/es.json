@@ -1,0 +1,44 @@
+{
+  "Metadata": {
+    "title": "Páginas Amarillas Sismo Vzla | Directorio",
+    "description": "Directorio centralizado de contingencia. Información validada de plataformas web creadas ante el terremoto en Venezuela."
+  },
+  "Navigation": {
+    "changeLanguage": "EN"
+  },
+  "Hero": {
+    "mainTitle": "SISMO VZLA",
+    "subtitle": "PÁGINAS AMARILLAS"
+  },
+  "Banner": {
+    "alt": "Banner Informativo del Sismo"
+  },
+  "Sidebar": {
+    "title": "DIRECTORIO",
+    "openButton": "☰",
+    "closeButton": "✖"
+  },
+  "Categories": {
+    "ALL": "VER TODO",
+    "EMERGENCY": "EMERGENCIA",
+    "DONATIONS": "DONACIONES",
+    "MAPS": "MAPAS DE RIESGO",
+    "NEWS": "NOTICIAS",
+    "VOLUNTEERING": "VOLUNTARIADO",
+    "ABOUT": "APORTAR"
+  },
+  "Directory": {
+    "verified": "VERIFICADO",
+    "visit": "IR AL SITIO",
+    "empty": "No hay registros disponibles en esta sección por el momento."
+  },
+  "About": {
+    "title": "ÚNETE AL ESFUERZO",
+    "description": "Este portal es un esfuerzo de código abierto para centralizar herramientas de ayuda. Si eres desarrollador, diseñador, o conoces iniciativas que deban indexarse, únete a nuestra comunidad para aportar tu granito de arena.",
+    "discordButton": "UNIRSE AL DISCORD",
+    "githubButton": "REPOSITORIO EN GITHUB"
+  },
+  "Footer": {
+    "copyright": "© 2026 PÁGINAS AMARILLAS VZLA"
+  }
+}

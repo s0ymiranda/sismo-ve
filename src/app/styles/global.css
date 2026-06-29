@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    image-rendering: pixelated;
+    text-rendering: pixelated;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #121212;
+    border-left: 4px solid #003DA5;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #EF3340;
+    border: 3px solid #121212;
+  }
+}
+
+@layer components {
+  .arcade-window {
+    @apply bg-white border-4 border-vzla-dark p-4 md:p-6 shadow-retro-md transition-all duration-150;
+  }
+  
+  .arcade-btn {
+    @apply inline-block text-center border-4 border-vzla-dark px-4 py-2 font-pixel text-[10px] md:text-xs font-bold shadow-retro-sm active:translate-x-[3px] active:translate-y-[3px] active:shadow-none transition-all cursor-pointer select-none;
+  }
+}
