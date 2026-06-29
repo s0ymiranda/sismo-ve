@@ -125,7 +125,7 @@ export const DIRECTORY_DATA: WebSiteItem[] = [
     descriptionEs: 'Red comunitaria para registrar mascotas perdidas, encontradas o con necesidad de atención médica urgente.',
     descriptionEn: 'Community network to register lost, found, or medically needy pets following the earthquake.',
     url: 'https://migenteve.com/',
-    categories: ['PETS'],
+    categories: ['PETS', 'MISSING'],
     verified: true
   },
   {
@@ -143,7 +143,7 @@ export const DIRECTORY_DATA: WebSiteItem[] = [
     descriptionEs: 'Directorio enfocado en reunir a animales domésticos rescatados con sus dueños legítimos.',
     descriptionEn: 'Directory focused on reuniting rescued domestic animals with their rightful owners.',
     url: 'https://www.mascotasporvenezuela.com/',
-    categories: ['PETS'],
+    categories: ['PETS', 'MISSING'],
     verified: true
   },
   {
