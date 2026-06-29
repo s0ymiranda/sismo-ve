@@ -50,15 +50,14 @@ export default function HomePage() {
   };
 
   const filteredSites = DIRECTORY_DATA.filter((site) => {
-    const matchesCategory = activeCategory === 'ALL' || site.categories.includes(activeCategory);
+    const matchesCategory = activeCategory === 'ALL' || (site.categories as string[]).includes(activeCategory);
     if (!matchesCategory) return false;
 
-    if (searchQuery.trim() === '') return true;
+    const effectiveSearchQuery = activeCategory === 'ALL' ? searchQuery : '';
+    if (effectiveSearchQuery.trim() === '') return true;
 
     const combinedSiteText = normalizeText(`${site.title} ${site.descriptionEs} ${site.descriptionEn}`);
-    
-    const searchTerms = normalizeText(searchQuery).split(' ').filter(term => term.length > 0);
-
+    const searchTerms = normalizeText(effectiveSearchQuery).split(' ').filter(term => term.length > 0);
     const matchesSearch = searchTerms.every(term => isFlexibleMatch(term, combinedSiteText));
 
     return matchesSearch;
@@ -111,7 +110,7 @@ export default function HomePage() {
         
         <Sidebar 
           activeCategory={activeCategory}
-          setActiveCategory={handleCategoryChange}
+          setActiveCategory={handleCategoryChange} 
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
