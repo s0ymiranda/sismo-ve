@@ -118,8 +118,8 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="flex-1 flex flex-col md:flex-row w-full max-w-7xl mx-auto p-4 md:p-8 gap-6 md:gap-8 relative">
-        
+      <div className="flex-1 flex flex-col md:flex-row w-full max-w-[90%] 2xl:max-w-[1440px] mx-auto p-4 md:py-8 gap-6 md:gap-8 relative">        
+      
         <Sidebar 
           activeCategory={activeCategory}
           setActiveCategory={handleCategoryChange} 
@@ -130,7 +130,7 @@ export default function HomePage() {
         <main className="flex-1 flex flex-col w-full min-w-0">
           
           {activeCategory === 'ABOUT' ? (
-            <section className="w-full max-w-3xl arcade-window bg-white border-4 border-vzla-dark p-6 md:p-8 shadow-retro-lg text-vzla-dark">
+            <section className="w-full max-w-3xl mx-auto mt-8 md:mt-0 arcade-window bg-white border-4 border-vzla-dark p-6 md:p-8 shadow-retro-lg text-vzla-dark">
               <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
                 <div className="shrink-0 w-20 h-20 bg-vzla-blue border-4 border-vzla-dark flex items-center justify-center text-3xl shadow-retro-sm rounded-sm">
                   🤝
@@ -151,15 +151,6 @@ export default function HomePage() {
                       className="arcade-btn bg-[#5865F2] text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:bg-[#4752C4] flex items-center gap-2"
                     >
                       <span className="text-sm">💬</span> {t('About.discordButton')}
-                    </a>
-                    
-                    <a 
-                      href="https://github.com/s0ymiranda/sismo-ve" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="arcade-btn bg-vzla-dark text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:bg-neutral-800 flex items-center gap-2"
-                    >
-                      <span className="text-sm">💻</span> {t('About.githubButton')}
                     </a>
 
                   </div>
@@ -187,7 +178,7 @@ export default function HomePage() {
               )}
 
               {filteredSites.length > 0 ? (
-                <section className="grid grid-cols-1 xl:grid-cols-2 gap-5 w-full">
+                <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 w-full">
                   {filteredSites.map((site) => (
                     <DirectoryCard key={site.id} site={site} currentLocale={currentLocale} />
                   ))}
