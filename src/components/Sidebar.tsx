@@ -40,18 +40,18 @@ export default function Sidebar({
 
       <aside className={`
         fixed inset-y-0 left-0 z-50 w-72 flex flex-col overflow-hidden transition-transform duration-300 ease-in-out
-        bg-white/60 backdrop-blur-xl shadow-[4px_0_24px_rgba(0,0,0,0.1)] p-6
-        md:relative md:transform-none md:w-64 md:h-fit md:bg-white/40 md:shadow-lg md:rounded-lg
+        bg-white/60 backdrop-blur-xl shadow-[4px_0_24px_rgba(0,0,0,0.1)] p-4 md:p-6
+        md:relative md:z-10 md:transform-none md:w-64 md:h-fit md:bg-white/40 md:shadow-lg md:rounded-lg
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
       `}>
-        <div className="font-pixel text-[11px] text-vzla-blue tracking-wider mb-6 border-b-2 border-vzla-dark/20 pb-2 uppercase flex justify-between items-center">
+        <div className="shrink-0 font-pixel text-[11px] text-vzla-blue tracking-wider mb-4 md:mb-6 border-b-2 border-vzla-dark/20 pb-2 uppercase flex justify-between items-center">
           <span>📁 {tSidebar('title')}</span>
           <button onClick={() => setIsSidebarOpen(false)} className="md:hidden text-vzla-dark text-lg">
             {tSidebar('closeButton')}
           </button>
         </div>
         
-        <nav className="flex flex-col gap-2 flex-1">
+        <nav className="flex flex-col gap-2 flex-1 overflow-y-auto min-h-0 pr-2">
           {SIDEBAR_ITEMS.map((item) => (
             <button
               key={item.id}
@@ -59,7 +59,7 @@ export default function Sidebar({
                 setActiveCategory(item.id);
                 setIsSidebarOpen(false);
               }}
-              className={`text-left border-2 px-3 py-3 font-pixel text-[10px] transition-all flex items-center gap-2 overflow-hidden whitespace-nowrap text-ellipsis rounded-sm ${
+              className={`text-left border-2 px-3 py-3 font-pixel text-[10px] transition-all flex items-center gap-2 overflow-hidden whitespace-nowrap text-ellipsis rounded-sm shrink-0 ${
                 activeCategory === item.id
                   ? 'bg-vzla-dark text-white border-vzla-dark translate-x-1 shadow-retro-sm'
                   : 'bg-white/50 text-vzla-dark border-transparent hover:bg-white'
@@ -71,7 +71,7 @@ export default function Sidebar({
           ))}
         </nav>
 
-        <div className="mt-8 pt-4 border-t-2 border-vzla-dark/20">
+        <div className="shrink-0 mt-4 pt-4 border-t-2 border-vzla-dark/20">
           <button 
             onClick={toggleLanguage} 
             className="w-full arcade-btn bg-vzla-yellow text-vzla-dark border-4 border-vzla-dark shadow-retro-sm hover:bg-yellow-400 flex items-center justify-center gap-2"

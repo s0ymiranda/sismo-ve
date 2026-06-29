@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import bannerImg from '../public/banner.webp';
 import Sidebar from '../../components/Sidebar';
@@ -43,6 +43,18 @@ export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState<CategoryId>('ALL');
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isSidebarOpen]);
 
   const handleCategoryChange = (category: CategoryId) => {
     setActiveCategory(category);

@@ -293,7 +293,7 @@ export const DIRECTORY_DATA: WebSiteItem[] = [
   {
     id: '32',
     title: 'Cáritas Venezuela',
-    descriptionEs: 'Donaciones para sostener el trabajo de más de 30 mil voluntarios con la población vulnerable. Todo aporte suma.',
+    descriptionEs: 'Donaciones para sostener el trabajo de más de 30 mil voluntarios que prestan sus servicios a la población más vulnerable en toda Venezuela.. Todo aporte suma.',
     descriptionEn: 'Donations to support the work of over 30,000 volunteers helping the vulnerable population.',
     url: 'https://caritasvenezuela.org/donaciones/',
     categories: ['DONATIONS', 'VOLUNTEERING'],
@@ -324,6 +324,15 @@ export const DIRECTORY_DATA: WebSiteItem[] = [
     descriptionEn: 'Centralized search engine to locate family members in hospitals using their ID number or full name.',
     url: 'https://ingresados-hospitalarios-ve.vercel.app/',
     categories: ['HOSPITALS', 'MISSING'],
+    verified: true
+  },
+  {
+    id: '36',
+    title: 'Contigo UCV',
+    descriptionEs: 'Herramienta de primeros auxilios psicológicos por OBE-UCV. Permite solicitar atención Psicologica y herramientas para calmarte o sumarse como psicólogo voluntario.',
+    descriptionEn: 'Psychological first aid tool by OBE-UCV. Allows users to request psychological care or join as a volunteer psychologist.',
+    url: 'https://contigoucv.com/',
+    categories: ['DONATIONS', 'VOLUNTEERING'],
     verified: true
   }
 ];
