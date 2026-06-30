@@ -41,7 +41,8 @@
     "description": "This portal is an open-source effort to centralize aid tools. If you are a developer, designer, or know of initiatives that should be indexed, join to help organize the contingency response.",
     "githubButton": "GITHUB REPOSITORY",
     "emailButton": "CONTACT US",
-    "instagramButton": "INSTAGRAM"
+    "instagramButton": "INSTAGRAM",
+    "discordButton": "JOIN THE DISCORD"
   },
   "Footer": {
     "copyright": "© 2026 VZLA YELLOW PAGES"

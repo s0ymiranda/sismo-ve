@@ -154,22 +154,33 @@ export default function HomePage() {
                     </a>
 
                     <a 
+                      href="https://discord.gg/KG4hnHfax" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="arcade-btn bg-vzla-dark text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:bg-[#4752C4] flex items-center gap-2"
+                    >
+                      <span className="text-sm">💬</span> {t('About.discordButton')}
+                    </a>
+
+                    <div className="flex gap-4">
+                      <a 
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=andreamirandacasbackup@gmail.com" 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="arcade-btn bg-vzla-dark text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:opacity-90 flex items-center gap-2"
+                        className="arcade-btn bg-vzla-red text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:opacity-90 flex items-center gap-2"
                       >
                         <span className="text-sm">✉️</span> {t('About.emailButton')}
-                    </a>
-
-                    <a 
-                      href="https://instagram.com/s0ymiranda" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="arcade-btn bg-vzla-dark text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:opacity-90 flex items-center gap-2"
-                    >
-                      <span className="text-sm">📱</span> {t('About.instagramButton')}
-                    </a>
+                      </a>
+                            
+                      <a 
+                        href="https://instagram.com/s0ymiranda" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="arcade-btn bg-vzla-red text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:opacity-90 flex items-center gap-2"
+                      >
+                        <span className="text-sm">📱</span> {t('About.instagramButton')}
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
