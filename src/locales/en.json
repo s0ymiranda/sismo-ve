@@ -38,10 +38,10 @@
   },
   "About": {
     "title": "JOIN THE EFFORT",
-    "description": "This portal is an open-source effort to centralize aid tools. If you are a developer, designer, or know of initiatives that should be indexed, join our community to help organize the contingency response.",
-    "createdBy": "Open-source initiative maintained by:",
-    "discordButton": "JOIN DISCORD",
-    "githubButton": "GITHUB REPOSITORY"
+    "description": "This portal is an open-source effort to centralize aid tools. If you are a developer, designer, or know of initiatives that should be indexed, join to help organize the contingency response.",
+    "githubButton": "GITHUB REPOSITORY",
+    "emailButton": "CONTACT US",
+    "instagramButton": "INSTAGRAM"
   },
   "Footer": {
     "copyright": "© 2026 VZLA YELLOW PAGES"
