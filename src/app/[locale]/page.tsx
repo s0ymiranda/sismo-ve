@@ -130,7 +130,7 @@ export default function HomePage() {
         <main className="flex-1 flex flex-col w-full min-w-0">
           
           {activeCategory === 'ABOUT' ? (
-            <section className="w-full max-w-3xl mx-auto mt-8 md:mt-0 arcade-window bg-white border-4 border-vzla-dark p-6 md:p-8 shadow-retro-lg text-vzla-dark">
+            <section className="w-full max-w-3xl mx-auto md:mt-0 arcade-window bg-white border-4 border-vzla-dark p-6 md:p-8 shadow-retro-lg text-vzla-dark">
               <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
                 <div className="shrink-0 w-20 h-20 bg-vzla-blue border-4 border-vzla-dark flex items-center justify-center text-3xl shadow-retro-sm rounded-sm">
                   🤝
@@ -145,14 +145,42 @@ export default function HomePage() {
                   
                   <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
                     <a 
+                      href="https://github.com/s0ymiranda/sismo-ve" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="arcade-btn bg-vzla-dark text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:bg-neutral-800 flex items-center gap-2"
+                    >
+                      <span className="text-sm">💻</span> {t('About.githubButton')}
+                    </a>
+
+                    <a 
                       href="https://discord.gg/KG4hnHfax" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="arcade-btn bg-[#5865F2] text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:bg-[#4752C4] flex items-center gap-2"
+                      className="arcade-btn bg-vzla-dark text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:bg-[#4752C4] flex items-center gap-2"
                     >
                       <span className="text-sm">💬</span> {t('About.discordButton')}
                     </a>
 
+                    <div className="flex gap-4">
+                      <a 
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=andreamirandacasbackup@gmail.com" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="arcade-btn bg-vzla-red text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:opacity-90 flex items-center gap-2"
+                      >
+                        <span className="text-sm">✉️</span> {t('About.emailButton')}
+                      </a>
+                            
+                      <a 
+                        href="https://instagram.com/s0ymiranda" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="arcade-btn bg-vzla-red text-white border-2 border-vzla-dark text-[10px] px-4 py-3 hover:opacity-90 flex items-center gap-2"
+                      >
+                        <span className="text-sm">📱</span> {t('About.instagramButton')}
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
