@@ -1,32 +1,40 @@
-# sismo-ve
+<p align="center">
+  <img src="src/app/public/banner.webp" alt="Banner Sismo Vzla" width="100%" />
+</p>
 
-> 📍 Una iniciativa de la comunidad de desarrolladores independientes de Venezuela.
+# 🚨 Páginas Amarillas: Sismo Vzla
 
-[![Discord](https://img.shields.io/discord/123456789012345678?color=7289da&label=Discord&logo=discord)](https://discord.gg/A4UJRturq)
+> 📍 Directorio web de contingencia centralizado y de código abierto.
+> 🌐 **Sitio en vivo:** [sismove.info](https://sismove.info)
 
-A raíz del reciente movimiento telúrico en nuestro país, han surgido de forma descentralizada múltiples plataformas web, herramientas de mapeo, sistemas de reportes y portales de ayuda. 
+A raíz del reciente movimiento telúrico en nuestro país, la información vital (listas de desaparecidos, estatus de hospitales, centros de acopio) se dispersó rápidamente a través de cadenas y redes sociales. 
 
-Este repositorio nace con el objetivo de **centralizar, verificar y organizar la información de todas las páginas web e iniciativas digitales creadas para afrontar la emergencia del sismo en Venezuela**. Queremos proveer un punto único de acceso confiable tanto para la ciudadanía en general como para los equipos de respuesta en el terreno.
-
----
-
-## Nuestra Misión
-
-1. **Consolidar en un solo lugar:** Indexar plataformas de búsqueda de personas, mapas de daños, reportes de infraestructura, centros de acopio y donaciones oficiales, evitando la dispersión de la información.
-2. **Garantizar Disponibilidad:** Monitorear el estado de los sitios web indexados (uptime) para asegurar que los recursos críticos sigan accesibles cuando la población más los necesite.
-3. **Datos Abiertos:** Servir como una base de datos abierta y estructurada (JSON/API) para que cualquier otro desarrollador o brigadista pueda consumir estos enlaces y reutilizarlos en sus propias herramientas.
-
-## 💬 Únete a nuestra comunidad (Discord)
-
-Toda la coordinación técnica, el monitoreo de nuevos portales, la asignación de tareas de desarrollo y la verificación de datos se está gestionando de forma abierta a través de nuestro servidor de Discord. 
-
-Si eres programador (Frontend, Backend, Data Science), diseñador, verificador de información o simplemente quieres dar visibilidad a un sitio web de ayuda que no esté listado, **tu apoyo es fundamental**.
-
-📢 **[¡Haz clic aquí para unirte a nuestro Discord oficial!](https://discord.gg/A4UJRturq)** `https://discord.gg/A4UJRturq`
+Este proyecto nace con el objetivo de **centralizar, verificar y organizar** todas las herramientas de ayuda e iniciativas digitales en un solo punto de acceso, tanto para la ciudadanía como para los equipos de respuesta.
 
 ---
 
+## 📖 Origen y Otros Proyectos
+
+Esta plataforma nació como una respuesta rápida a la emergencia dentro del servidor de Discord de la comunidad de desarrolladores de Venezuela. 
+
+Aunque el desarrollo principal de **este** directorio (Sismo Vzla) lo estoy manteniendo actualmente de forma independiente, en ese Discord existen **muchos otros proyectos, herramientas y equipos** organizándose para ayudar en la contingencia. 
+
+Si eres programador, diseñador, analista de datos o voluntario, y quieres sumar tus habilidades a otras iniciativas tecnológicas, te invito a unirte a la comunidad:
+👉 **[Únete al Discord de contingencia aquí](https://discord.gg/A4UJRturq)**
+
+---
+
+## 🛠️ ¿Cómo colaborar con este directorio?
+
+Si conoces algún centro de acopio, refugio, base de datos de rescate o iniciativa que deba ser indexada en esta página, o si eres dev y quieres ayudar a mejorar el código de la plataforma, ¡tu aporte es fundamental!
+
+Puedes colaborar de las siguientes maneras:
+
+1. **Código / Propuestas:** Haz un *Fork* de este repositorio, añade las mejoras o datos en los archivos JSON correspondientes, y envía un *Pull Request*.
+2. **Contacto Directo:** Si no sabes programar pero tienes información verificada para agregar a la página, contactame.
+
+---
 
 <p align="center">
-  <strong>"En momentos de crisis, el software libre y la comunidad tecnológica se convierten en herramientas de primera necesidad."</strong>
+  <strong>"En momentos de crisis, el código abierto y la organización ciudadana salvan vidas."</strong>
 </p>
