@@ -7,7 +7,8 @@ export type CategoryId =
   | 'MAPS' 
   | 'PETS' 
   | 'VOLUNTEERING' 
-  | 'REPORTS' 
+  | 'REPORTS'
+  | 'INFORMATION' 
   | 'ABOUT';
 
 export interface SidebarItem {
@@ -26,5 +27,6 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
   { id: 'VOLUNTEERING', translationKey: 'VOLUNTEERING', icon: '🤝' },
   { id: 'REPORTS', translationKey: 'REPORTS', icon: '⚠️' },
   { id: 'MAPS', translationKey: 'MAPS', icon: '🗺️' },
+  { id: 'INFORMATION', translationKey: 'INFORMATION', icon: '📰' },
   { id: 'ABOUT', translationKey: 'ABOUT', icon: 'ℹ️' }
 ];
