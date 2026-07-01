@@ -34,7 +34,10 @@
     "verified": "VERIFIED",
     "visit": "VISIT SITE",
     "empty": "No records available in this section at the moment.",
-    "searchPlaceholder": "Search sites, resources or keywords..."
+    "searchPlaceholder": "Search sites, resources or keywords...",
+    "loading": "Loading directory...",
+    "error": "Error connecting to the database",
+    "retry": "Retry connection"
   },
   "About": {
     "title": "JOIN THE EFFORT",

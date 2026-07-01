@@ -44,9 +44,9 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       follow: true,
     },
     icons: {
-      icon: '../icon.png',
-      shortcut: '../icon.png',
-      apple: '../icon.png',
+      icon: '../public/icon.png',
+      shortcut: '../public/icon.png',
+      apple: '../public/icon.png',
     },
   };
 }
