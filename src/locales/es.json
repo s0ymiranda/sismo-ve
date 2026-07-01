@@ -34,7 +34,10 @@
     "verified": "VERIFICADO",
     "visit": "IR AL SITIO",
     "empty": "No hay registros disponibles en esta sección por el momento.",
-    "searchPlaceholder": "Buscar sitios, recursos o palabras clave..."
+    "searchPlaceholder": "Buscar sitios, recursos o palabras clave...",
+      "loading": "Cargando directorio...",
+    "error": "Error al conectar con la base de datos",
+    "retry": "Reintentar conexión"
   },
   "About": {
     "title": "ÚNETE AL ESFUERZO",

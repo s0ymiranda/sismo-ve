@@ -4,8 +4,8 @@ import { useTranslations, useLocale } from 'next-intl';
 import bannerImg from '../public/banner.webp';
 import Sidebar from '../../components/Sidebar';
 import DirectoryCard from '../../components/DirectoryCard';
-import { DIRECTORY_DATA } from '../../data/sites';
 import { CategoryId } from '../../data/categories';
+import { useSites } from '../../hooks/useSites';
 
 const normalizeText = (text: string) => {
   return text
@@ -44,6 +44,8 @@ export default function HomePage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState('');
 
+  const { sites, isLoading, error } = useSites();
+
   useEffect(() => {
     if (isSidebarOpen) {
       document.body.style.overflow = 'hidden';
@@ -61,7 +63,9 @@ export default function HomePage() {
     setSearchQuery(''); 
   };
 
-  const filteredSites = DIRECTORY_DATA.filter((site) => {
+  const filteredSites = sites.filter((site) => {
+    if (site.isActive === false) return false;
+
     const matchesCategory = activeCategory === 'ALL' || (site.categories as string[]).includes(activeCategory);
     if (!matchesCategory) return false;
 
@@ -129,8 +133,27 @@ export default function HomePage() {
 
         <main className="flex-1 flex flex-col w-full min-w-0">
           
-          {activeCategory === 'ABOUT' ? (
-            <section className="w-full max-w-3xl mx-auto md:mt-0 arcade-window bg-white border-4 border-vzla-dark p-6 md:p-8 shadow-retro-lg text-vzla-dark">
+          {isLoading ? (
+            <div className="w-full h-full flex flex-col items-center justify-center py-20">
+              <p className="font-pixel text-sm md:text-base text-vzla-dark animate-pulse uppercase">
+                {t('Directory.loading') || 'Cargando directorio...'}
+              </p>
+            </div>
+          ) : error ? (
+            <div className="w-full max-w-md mx-auto arcade-window bg-white border-4 border-vzla-dark p-8 text-center flex flex-col items-center justify-center shadow-retro-lg mt-10">
+              <span className="text-4xl mb-4">⚠️</span>
+              <p className="font-pixel text-[10px] md:text-xs text-red-600 leading-relaxed uppercase mb-6">
+                {t('Directory.error') || 'Error al conectar con la base de datos'}
+              </p>
+              <button 
+                onClick={() => window.location.reload()} 
+                className="arcade-btn bg-vzla-dark text-white border-2 border-vzla-dark px-4 py-2 font-pixel text-[10px]"
+              >
+                {t('Directory.retry') || 'Reintentar conexión'}
+              </button>
+            </div>
+          ) : activeCategory === 'ABOUT' ? (
+             <section className="w-full max-w-3xl mx-auto md:mt-0 arcade-window bg-white border-4 border-vzla-dark p-6 md:p-8 shadow-retro-lg text-vzla-dark">
               <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
                 <div className="shrink-0 w-20 h-20 bg-vzla-blue border-4 border-vzla-dark flex items-center justify-center text-3xl shadow-retro-sm rounded-sm">
                   🤝
@@ -185,11 +208,8 @@ export default function HomePage() {
                 </div>
               </div>
             </section>
-
           ) : (
-            
             <div className="w-full flex flex-col">
-              
               {activeCategory === 'ALL' && (
                 <div className="mb-6">
                   <div className="relative flex items-center">
@@ -220,7 +240,6 @@ export default function HomePage() {
                 </div>
               )}
             </div>
-
           )}
           
         </main>
