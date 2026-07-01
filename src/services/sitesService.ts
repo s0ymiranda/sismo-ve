@@ -1,4 +1,4 @@
-import { collection, getDocs } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { WebSiteItem } from '../data/sites';
 
@@ -22,11 +22,15 @@ export const getSites = async (): Promise<WebSiteItem[]> => {
       }
     }
 
-    const querySnapshot = await getDocs(collection(db, 'sites'));
-    const sitesData: WebSiteItem[] = querySnapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    })) as WebSiteItem[];
+    const docRef = doc(db, 'directory', 'all_sites');
+    const docSnap = await getDoc(docRef);
+
+    let sitesData: WebSiteItem[] = [];
+
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      sitesData = (data.sites || []) as WebSiteItem[];
+    }
 
     sessionStorage.setItem(CACHE_KEY, JSON.stringify({
       timestamp: Date.now(),
